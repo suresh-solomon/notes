@@ -9,6 +9,7 @@ To make aliases permanant.
 
 ### Update ~/.bash_aliases
 vi ~/.bash_aliases
+
 alias k='kubectl'
 alias kg='kubectl get '
 
