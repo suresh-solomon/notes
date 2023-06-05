@@ -73,5 +73,5 @@ add the aaplication ID "'04b07795-8ddb-461a-bbee-02f9e1bf7b46' named 'Microsoft 
 
 still not able to figure out the  association of the group to the kubectl commands. 
 
-
+https://www.youtube.com/watch?v=giV0WHtp49A&t=32s
 
