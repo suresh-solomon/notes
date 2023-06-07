@@ -3,7 +3,7 @@ https://medium.com/@olemarkus/using-azure-ad-to-authenticate-to-kubernetes-eb143
 1. step one create ad groups.
 
 2. Create new app registration >> this is the API server
-az ad app create --display-name k3slabAuth
+az ad app create --display-name k3sapiserver
 fill in following from az portal.
 
 --oidc-client-id="spn:<application id>" \
@@ -20,7 +20,7 @@ also need to expose API for th next app use.
 3. Create another new app registration
 
 
-az ad app create --display-name k3slabAuth2
+az ad app create --display-name kubectl
  Go to the API Permissions tab, 
  click Add a permission.
  Pick the My APIs.
