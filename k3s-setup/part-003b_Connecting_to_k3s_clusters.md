@@ -128,8 +128,9 @@ You can merge multiple kubeconfig files.
 Place all config files copied from remote servers to ~/.kube/remote/ , or you can change this path as needed.
 
 Merge multiple kubeconfig files on the folder  ~/.kube/remote/ 
+```
 export KUBECONFIG=~/.kube/config:$(find  ~/.kube/remote/ -type f | tr '\n' ':')
-
+!! to export merged kubeconfig to file? to check if the kubeconfig file content is consistent every time this is done.
 ```
 
 
