@@ -2,7 +2,7 @@
 ## prerequisite.
 #####################prerequisite#############################
 ########## Install kubelogin and kubectl.
-# easiest method and enable future updates easier without other tools like brew. 
+#### easiest method and enable future updates easier without other tools like brew. 
 https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
 
 Install AZ CLI per Prerequisites
