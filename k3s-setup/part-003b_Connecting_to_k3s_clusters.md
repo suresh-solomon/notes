@@ -8,14 +8,30 @@ Connecting to the k3s nodes is a bit more challenging.
 |root access| must have root access to complete the configuration| when setting up Ubuntu we created the login "k3s" and a password. |
 
 #### Step 1 
-Install kubectl on the management server
-Details available here [Kubectl official ](https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/)
+########## Install kubelogin and kubectl on the management server
+#### easiest method and enable future updates easier without other tools like brew. 
+[Install AZ CLI per Prerequisites](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt)
 
-The following command downloads and installs  the latest kubectl.
+```
+cd /usr/bin/
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+```
+If you get errors try this 
+```
+sudo vi /etc/apt/sources.list
+# remark  deb file:/cdrom focal Release
+```
 
-	a.   `curl -LO "https://dl.k8s.io/release/$(curl -L -s
-				https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"`
-	b.  `sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl`
+Execute the commands below to install kubectl and kubelogin
+
+```
+sudo az aks install-cli  # installs kubectl and kubelogin.
+kubectl version --client
+kubelogin --version
+```
+
+
+#####################prerequisite-end#############################
 
 #### Step 2
 ##### This step involves copying the k3s kubeconfig credentials to access the cluster remotely.
