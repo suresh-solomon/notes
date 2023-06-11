@@ -28,18 +28,20 @@ kubelogin --version
 
 
 
-
+#### setup k3s no ad login ####
 Setup basic disable traefic
 ### config stored in 
+```
 curl -sfL https://get.k3s.io | \
   sh -s - \
   --write-kubeconfig-mode 644 \
-  --disable "traefik"  \
-
+  --disable "traefik"  
+```
 
 
 Setup with AAD login 
 ### config stored in 
+```
 curl -sfL https://get.k3s.io | \
   sh -s - \
   --write-kubeconfig-mode 644 \
@@ -51,4 +53,4 @@ curl -sfL https://get.k3s.io | \
   --kube-apiserver-arg "oidc-groups-claim=groups" \
   --kube-apiserver-arg "oidc-username-prefix=aad:" \
   --kube-apiserver-arg "oidc-groups-prefix=aad:"
-  
+```  
