@@ -95,10 +95,10 @@ yq eval '.contexts[0].context.user = strenv(USER)' -i "$file_path"
 ####  You can now check the output ( use the -v=6 to check the location of the kubectl file used)
 
 ```
-root@k3s-single-01:~# kubectl config get-contexts -v=6
-I0611 09:06:29.080862    8662 loader.go:373] Config loaded from file:  /root/.kube/config
+k3s@k3s-single-01:/$ kubectl config get-contexts -v=6
+I0611 09:20:34.419604    9668 loader.go:373] Config loaded from file:  /home/k3s/.kube/config
 CURRENT   NAME                            CLUSTER                 AUTHINFO             NAMESPACE
-*         k3s-single-01-cluster-context   k3s-single-01-cluster   k3s-single-01-user
+          k3s-single-01-cluster-context   k3s-single-01-cluster   k3s-single-01-user
 ```
 
 
@@ -111,13 +111,15 @@ kubectl config set-credentials k3s-single-01-user --client-certificate=cert_data
 
 ```
 
-### Step 3
+#### Step 3 ( Run on Management server)
+Summary
+Step 1 and Step 2 were performed on the k3s node. This resulted in a working `~/.kube/config` file. 
+We will now copy this file to the Management server and configure the management server to access the k3s node remotely.
 
-Run on remote
 Use scp to copy file from remote server.
 ```
 Copy edited kubectl from remote server
-scp k3s@192.168.0.206:~/.kube/config ~/.kube/remote/config-206
+mkdir ~/.kube/ -p  && scp k3s@192.168.0.200:~/.kube/config ~/.kube/remote/config-200
 
 ```
 
