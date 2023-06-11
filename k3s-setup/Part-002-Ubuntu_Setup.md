@@ -58,17 +58,20 @@ This is because I do not have a DNS setup I can use to register the ubuntu hostn
 In a production environment we will use the hostnames to reach each of the servers.
 As a workaround, we can update the hosts file on the management server. The hosts file will map the IP to the hostname.
 From the k3s-mgmt-lab-01 console
+```
 `sudo vi /etc/hosts`
 `sudo - command elevates the terminal to elevated privileges`
 `vi - a text editor `
+```
 
 Once the hosts file is open. 
 1. move the cursor to the end of k3s-mgmt-lab-01
 2. press `I`  to enter edit mode
 3. type the following
-
+```
 `192.168.0.231 k3s-single-lab-01`
 `192.168.0.232 k3s-single-lab-02`
+```
 
 4. press `esc` button
 5. type `:x` and enter to save and exit.
@@ -79,9 +82,6 @@ We can now ping the hostname of the remote servers from the management terminal
 ![[Pasted image 20230108214608.png]]
 
 We have completed installation of Ubuntu.
-
-
-Rerecord Video installation
 
 
 
@@ -109,4 +109,8 @@ net.ipv6.conf.lo.disable_ipv6=1
 #reload configuration
 sudo sysctl -p
 ```
+Rerecord Video installation
+
+
+
 
