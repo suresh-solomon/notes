@@ -6,7 +6,7 @@ Install AZ CLI per Prerequisites
 Execute the commands per doc to install kubectl and kubelogin
 
 ```
-sudo az aks install-cli
+sudo az aks install-cli  ## install kubectl and kubelogin
 sudo kubectl version --client
 sudo kubelogin --version
 ```
