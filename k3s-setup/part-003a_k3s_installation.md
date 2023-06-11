@@ -3,9 +3,10 @@
 #####################prerequisite#############################
 ########## Install kubelogin and kubectl.
 #### easiest method and enable future updates easier without other tools like brew. 
-https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
 
-Install AZ CLI per Prerequisites
+
+[Install AZ CLI per Prerequisites](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt)
+
 ```
 cd /usr/bin/
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
