@@ -122,12 +122,20 @@ Copy edited kubectl from remote server
 mkdir ~/.kube/ -p  && scp k3s@192.168.0.200:~/.kube/config ~/.kube/remote/config-200
 
 ```
+In most cases you will have more than one cluster and with that multple ~/.kube/config files.
 
+You can merge multiple kubeconfig files.
+Place all config files copied from remote servers to ~/.kube/remote/ , or you can change this path as needed.
 
-
-replace 127.0.0.1 with IP of remote cluster on the config file copied.
+Merge multiple kubeconfig files on the folder  ~/.kube/remote/ 
+export KUBECONFIG=~/.kube/config:$(find  ~/.kube/remote/ -type f | tr '\n' ':')
 
 ```
+
+
+
+
+
 extract Cert data to be updated in new kubeconfig
 - certificate-authority-data
 kubectl config view --kubeconfig ~/.kube/remote/config-206 --raw --minify --flatten --output jsonpath='{.clusters[?(@.name=="default")].user.client-certificate-data}' > /tmp/cert_certificate-authority-data.txt
@@ -141,13 +149,3 @@ kubectl config view --kubeconfig ~/.kube/remote/config-206 --raw --minify --flat
 ```
 
 
-```
-update kubeconfig with data from 
-Merge multiple kubeconfig files.
-Place all config files copied from remote servers to ~/.kube/remote/
-
-run command to merge the 
-export KUBECONFIG=~/.kube/:$(find ~/.kube/remote/ -type f | tr '\n' ':')
-
-
-```
